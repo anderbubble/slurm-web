@@ -75,6 +75,7 @@ install -m644 schema/racks.dtd $RPM_BUILD_ROOT/usr/share/slurm-web/restapi/schem
 install -m644 README.md $RPM_BUILD_ROOT/usr/share/slurm-web/README.md
 install -m644 COPYING $RPM_BUILD_ROOT/usr/share/slurm-web/COPYING
 
+%post
 # start apache server if not already started, otherwise restart
 systemctl restart httpd
 
