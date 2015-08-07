@@ -1,5 +1,5 @@
 # Turn off the Fascist build policy (ignore unused files)
-%define _unpackaged_files_terminate_build 0 
+%define _unpackaged_files_terminate_build 0
 
 Name:           Slurm-web
 Version:        1.1.3
@@ -50,7 +50,7 @@ The role of the API is to serve raw runtime data about a system (typically a sup
 # Install apache conf files
 mkdir -p $RPM_BUILD_ROOT/etc/httpd/conf.d
 install -m 644 slurm-web/conf/slurm-web-dashboard.conf $RPM_BUILD_ROOT/etc/httpd/conf.d/slurm-web-dashboard.conf
-install -m 644 slurm-web/conf/slurm-web-restapi.conf $RPM_BUILD_ROOT/etc/httpd/conf.d/slurm-web-restapi.conf 
+install -m 644 slurm-web/conf/slurm-web-restapi.conf $RPM_BUILD_ROOT/etc/httpd/conf.d/slurm-web-restapi.conf
 
 # Install racks configuration file
 mkdir -p $RPM_BUILD_ROOT/etc/slurm-web
@@ -67,7 +67,7 @@ install -m 644 slurm-web/css/dashboard.css $RPM_BUILD_ROOT/usr/share/slurm-web/d
 install -m 644 slurm-web/static/logo.png $RPM_BUILD_ROOT/usr/share/slurm-web/dashboard/static/logo.png
 install -m 644 slurm-web/js/slurm-dashboard.js $RPM_BUILD_ROOT/usr/share/slurm-web/dashboard/js/slurm-dashboard.js
 
-# Install remaining restapi files 
+# Install remaining restapi files
 mkdir -p $RPM_BUILD_ROOT/usr/share/slurm-web
 mkdir -p $RPM_BUILD_ROOT/usr/share/slurm-web/restapi
 mkdir -p $RPM_BUILD_ROOT/usr/share/slurm-web/restapi/schema
@@ -91,17 +91,17 @@ systemctl restart httpd
 %doc /usr/share/slurm-web/COPYING
 
 %files -n slurm-web-dashboard
-/etc/httpd/conf.d/slurm-web-dashboard.conf 
-/usr/share/slurm-web/dashboard/css/dashboard.css 
-/usr/share/slurm-web/dashboard/static/logo.png 
-/usr/share/slurm-web/dashboard/js/slurm-dashboard.js 
+/etc/httpd/conf.d/slurm-web-dashboard.conf
+/usr/share/slurm-web/dashboard/css/dashboard.css
+/usr/share/slurm-web/dashboard/static/logo.png
+/usr/share/slurm-web/dashboard/js/slurm-dashboard.js
 /usr/share/slurm-web/dashboard/index.html
 
 %files -n slurm-web-restapi
-/etc/slurm-web/racks.xml 
-/etc/httpd/conf.d/slurm-web-restapi.conf 
-/usr/share/slurm-web/restapi/slurm-web-restapi.wsgi 
-/usr/share/slurm-web/restapi/slurmrestapi.py 
+/etc/slurm-web/racks.xml
+/etc/httpd/conf.d/slurm-web-restapi.conf
+/usr/share/slurm-web/restapi/slurm-web-restapi.wsgi
+/usr/share/slurm-web/restapi/slurmrestapi.py
 /usr/share/slurm-web/restapi/schema/dtd/racks.dtd
 
 %changelog
