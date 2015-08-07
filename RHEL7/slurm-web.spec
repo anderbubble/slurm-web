@@ -1,5 +1,3 @@
-# Turn off the Fascist build policy (ignore unused files)
-%define _unpackaged_files_terminate_build 0
 %define slurm_web_ver 1.1.2
 
 Name:           slurm-web
@@ -99,6 +97,8 @@ systemctl restart httpd
 /etc/httpd/conf.d/slurm-web-restapi.conf
 /usr/share/slurm-web/restapi/slurm-web-restapi.wsgi
 /usr/share/slurm-web/restapi/slurmrestapi.py
+/usr/share/slurm-web/restapi/slurmrestapi.pyc
+/usr/share/slurm-web/restapi/slurmrestapi.pyo
 /usr/share/slurm-web/restapi/schema/dtd/racks.dtd
 
 %changelog
